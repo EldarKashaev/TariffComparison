@@ -3,8 +3,8 @@
     public enum PaymentType
     {
         PerKWh,
-        UpToLimit,
-        AboveLimit,
+        UpToLimitPerKWh,
+        AboveLimitPerKWh,
         Mothly
     }
 }

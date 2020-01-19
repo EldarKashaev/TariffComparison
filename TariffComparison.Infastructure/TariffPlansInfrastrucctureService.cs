@@ -51,7 +51,7 @@ namespace TariffComparison.Infastructure
                         Id = 3,
                         Description = "up to 4000 kWh/year",
                         LimitKWh = 4000,
-                        PaymentType = PaymentType.UpToLimit,
+                        PaymentType = PaymentType.UpToLimitPerKWh,
                         Cost = new Money
                         {
                             Amount = 800M,
@@ -63,7 +63,7 @@ namespace TariffComparison.Infastructure
                         Id = 4,
                         Description = "above 4000 kWh/year",
                         LimitKWh = 4000,
-                        PaymentType = PaymentType.AboveLimit,
+                        PaymentType = PaymentType.AboveLimitPerKWh,
                         Cost = new Money
                         {
                             Amount = 0.30M,

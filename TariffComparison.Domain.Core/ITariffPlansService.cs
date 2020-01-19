@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using TariffComparison.Domain.Models;
 
 namespace TariffComparison.Domain.Services.Core
 {
     public interface ITariffPlansService
     {
-        IEnumerable<TariffPlan> GetAll();
+        IEnumerable<TariffSummary> CompareAnnualCosts(int[] consumptions);
     }
 }

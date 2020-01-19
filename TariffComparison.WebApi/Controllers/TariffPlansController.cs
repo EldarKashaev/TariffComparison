@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using TariffComparison.Domain.Services.Core;
@@ -23,11 +22,10 @@ namespace TariffComparison.Controllers
             _tariffPlansService = tariffPlansService;
         }
 
-        [HttpGet]
-        public IEnumerable<TariffPlansViewModel> Get()
+        [HttpGet("{consumptions}")]
+        public IEnumerable<TariffPlansViewModel> Get([FromQuery] int[] consumptions)
         {
-            var tariffPlans = _tariffPlansService.GetAll();
-            return tariffPlans.Select(_ => _.ToViewModel());
+            return _tariffPlansService.CompareAnnualCosts(consumptions).Select(_ => _.ToViewModel());
         }
     }
 }

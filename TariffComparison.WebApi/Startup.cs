@@ -25,7 +25,6 @@ namespace TariffComparison
         {
             services.AddControllers();
             services.AddScoped<ITariffPlansService, TariffPlansService>();
-            services.AddScoped<ITariffCalculationService, TariffCalculationService>();
             services.AddScoped<ITariffPlansInfrastrucctureService, TariffPlansInfrastrucctureService>();
         }
 

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using TariffComparison.Domain.Models;
 using TariffComparison.Domain.Services.Core;
 using TariffComparison.Infrastucture.Core;
 
@@ -11,9 +13,15 @@ namespace TariffComparison.Domain
         {
             _tariffPlans = tariffPlans;
         }
-        public IEnumerable<TariffPlan> GetAll()
+
+        public IEnumerable<TariffSummary> CompareAnnualCosts(int[] consumptions)
         {
-            return _tariffPlans.GetAll();
+            var tariffPlans = _tariffPlans.GetAll();
+            return tariffPlans.Select(_ => new TariffSummary
+            {
+                Name = _.Name,
+                AnnualCosts = consumptions.Select(consumption => _.AnnualCost(consumption).Amount).ToList()
+            });
         }
     }
 }
