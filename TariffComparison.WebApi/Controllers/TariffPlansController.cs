@@ -14,19 +14,19 @@ namespace TariffComparison.Controllers
     public class TariffPlansController : ControllerBase
     {
         private readonly ILogger<TariffPlansController> _logger;
-        private readonly ITariffPlansService _service;
+        private readonly ITariffPlansService _tariffPlansService;
 
         public TariffPlansController(ILogger<TariffPlansController> logger,
-            ITariffPlansService service)
+            ITariffPlansService tariffPlansService)
         {
             _logger = logger;
-            _service = service;
+            _tariffPlansService = tariffPlansService;
         }
 
         [HttpGet]
         public IEnumerable<TariffPlansViewModel> Get()
         {
-            var tariffPlans = _service.GetAll();
+            var tariffPlans = _tariffPlansService.GetAll();
             return tariffPlans.Select(_ => _.ToViewModel());
         }
     }

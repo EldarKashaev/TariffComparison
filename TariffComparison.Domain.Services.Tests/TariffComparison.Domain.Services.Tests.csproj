@@ -13,4 +13,8 @@
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TariffComparison.Domain.Models\TariffComparison.Domain.Models.csproj" />
+  </ItemGroup>
+
 </Project>

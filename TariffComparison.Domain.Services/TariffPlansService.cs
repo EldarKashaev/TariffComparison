@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using TariffComparison.Domain.Services.Core;
+using TariffComparison.Infrastucture.Core;
 
 namespace TariffComparison.Domain
 {
     public class TariffPlansService : ITariffPlansService
     {
+        private readonly ITariffPlansInfrastrucctureService _tariffPlans;
+        public TariffPlansService(ITariffPlansInfrastrucctureService tariffPlans)
+        {
+            _tariffPlans = tariffPlans;
+        }
         public IEnumerable<TariffPlan> GetAll()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new TariffPlan
-            {
-                Name = $"Tariff_Plan_{rng.Next().ToString()}"
-            });
+            return _tariffPlans.GetAll();
         }
     }
 }

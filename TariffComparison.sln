@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TariffComparison.Domain.Mod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TariffComparison.Domain.Core", "TariffComparison.Domain.Core\TariffComparison.Domain.Core.csproj", "{EF2BCFC1-9261-4B89-836C-48E7C89D378E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TariffComparison.Domain.Services.Tests", "TariffComparison.Domain.Services.Tests\TariffComparison.Domain.Services.Tests.csproj", "{46EE6C81-162E-48D9-A43D-18204627131E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TariffComparison.Domain.Services.Tests", "TariffComparison.Domain.Services.Tests\TariffComparison.Domain.Services.Tests.csproj", "{46EE6C81-162E-48D9-A43D-18204627131E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TariffComparison.Infrastucture.Core", "TariffComparison.Infrastucture.Core\TariffComparison.Infrastucture.Core.csproj", "{F159BC18-8FCD-43C5-AE2C-046C4F228E75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TariffComparison.Infastructure", "TariffComparison.Infastructure\TariffComparison.Infastructure.csproj", "{C19AD123-7613-4013-9F07-09B52276A4B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{46EE6C81-162E-48D9-A43D-18204627131E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46EE6C81-162E-48D9-A43D-18204627131E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46EE6C81-162E-48D9-A43D-18204627131E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F159BC18-8FCD-43C5-AE2C-046C4F228E75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F159BC18-8FCD-43C5-AE2C-046C4F228E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F159BC18-8FCD-43C5-AE2C-046C4F228E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F159BC18-8FCD-43C5-AE2C-046C4F228E75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C19AD123-7613-4013-9F07-09B52276A4B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19AD123-7613-4013-9F07-09B52276A4B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19AD123-7613-4013-9F07-09B52276A4B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19AD123-7613-4013-9F07-09B52276A4B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
