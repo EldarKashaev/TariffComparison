@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TariffComparison.Domain.Models;
 
-namespace TariffComparison.Domain.Services.Core
+namespace TariffComparison.Domain.Core
 {
     public interface ITariffPlansService
     {

@@ -1,41 +1,40 @@
 ﻿using System;
-using TariffComparison.Domain.Models;
 
-namespace TariffComparison
+namespace TariffComparison.Domain.Models
 {
     public class Price
     {
         public int Id { get; set; }
         public string Description { get; set; }
         public Money Cost { get; set; }
-        public PaymentType PaymentType { get; set; }
-        public int LimitKWh { get; set; }
+        public BillingScheme BillingScheme { get; set; }
+        public uint Limit { get; set; }
 
-        public Money GetAnnualPrice(int consumption, Currency currency = Currency.EUR) {
-            Money price = new Money()
+        public Money GetAnnualPrice(uint consumption, Currency currency = Currency.EUR) {
+            var price = new Money
             {
                 SelectedCurrency = currency
             };
 
-            switch(this.PaymentType)
+            switch(this.BillingScheme)
             {
-                case PaymentType.Mothly:
+                case BillingScheme.Monthly:
                     price.Amount = this.Cost.Amount * 12;
                     break;
-                case PaymentType.PerKWh:
+                case BillingScheme.PerUnit:
                     price.Amount = this.Cost.Amount * consumption;
                     break;
-                case PaymentType.UpToLimitPerKWh:
+                case BillingScheme.UpToLimitPerUnit:
                     price.Amount = this.Cost.Amount;
                     break;
-                case PaymentType.AboveLimitPerKWh:
-                    if (consumption > LimitKWh)
+                case BillingScheme.AboveLimitPerUnit:
+                    if (consumption > Limit)
                     {
-                        price.Amount = this.Cost.Amount;
+                        price.Amount = this.Cost.Amount * (consumption - this.Limit);
                     }
                     break;
                 default:
-                    throw new ArgumentException("Unhandled value: " + this.PaymentType.ToString());
+                    throw new ArgumentException("Unhandled value: " + this.BillingScheme);
             }
 
             return price;

@@ -4,10 +4,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TariffComparison.Domain;
+using TariffComparison.Domain.Core;
 using TariffComparison.Domain.Services;
-using TariffComparison.Domain.Services.Core;
-using TariffComparison.Infastructure;
-using TariffComparison.Infrastucture.Core;
+using TariffComparison.Infrastructure;
+using TariffComparison.Infrastructure.Core;
 
 namespace TariffComparison
 {
@@ -25,7 +25,7 @@ namespace TariffComparison
         {
             services.AddControllers();
             services.AddScoped<ITariffPlansService, TariffPlansService>();
-            services.AddScoped<ITariffPlansInfrastrucctureService, TariffPlansInfrastrucctureService>();
+            services.AddScoped<ITariffPlansInfrastructureService, TariffPlansInfrastructureService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

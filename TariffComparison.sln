@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TariffComparison.Domain.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TariffComparison.Domain.Services.Tests", "TariffComparison.Domain.Services.Tests\TariffComparison.Domain.Services.Tests.csproj", "{46EE6C81-162E-48D9-A43D-18204627131E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TariffComparison.Infrastucture.Core", "TariffComparison.Infrastucture.Core\TariffComparison.Infrastucture.Core.csproj", "{F159BC18-8FCD-43C5-AE2C-046C4F228E75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TariffComparison.Infrastructure.Core", "TariffComparison.Infrastucture.Core\TariffComparison.Infrastructure.Core.csproj", "{F159BC18-8FCD-43C5-AE2C-046C4F228E75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TariffComparison.Infastructure", "TariffComparison.Infastructure\TariffComparison.Infastructure.csproj", "{C19AD123-7613-4013-9F07-09B52276A4B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TariffComparison.Infrastructure", "TariffComparison.Infastructure\TariffComparison.Infrastructure.csproj", "{C19AD123-7613-4013-9F07-09B52276A4B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using TariffComparison.Domain.Models;
 
-namespace TariffComparison
+namespace TariffComparison.Domain.Models
 {
     public class TariffPlan
     {
@@ -11,10 +9,10 @@ namespace TariffComparison
         public string Name { get; set; }
         public IEnumerable<Price> PriceList { get; set; }
 
-        public Money AnnualCost(int consuption)
+        public Money AnnualCost(uint consumption)
         {
             return new Money {
-                Amount = PriceList.Sum(_ => _.GetAnnualPrice(consuption, Currency.EUR).Amount),
+                Amount = PriceList.Sum(_ => _.GetAnnualPrice(consumption).Amount),
                 SelectedCurrency = Currency.EUR
             };
         }

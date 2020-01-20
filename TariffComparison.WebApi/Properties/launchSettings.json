@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/v1/TariffPlans",
+      "launchUrl": "api/v1/tariffplans/compare?consumption=3500&consumption=4500&consumption=6000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

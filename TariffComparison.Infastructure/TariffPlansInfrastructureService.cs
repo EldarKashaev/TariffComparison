@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using TariffComparison.Domain.Models;
-using TariffComparison.Infrastucture.Core;
+using TariffComparison.Infrastructure.Core;
 
-namespace TariffComparison.Infastructure
+namespace TariffComparison.Infrastructure
 {
-    public class TariffPlansInfrastrucctureService : ITariffPlansInfrastrucctureService
+    public class TariffPlansInfrastructureService : ITariffPlansInfrastructureService
     {
-        private readonly IEnumerable<TariffPlan> tariffPlans = new List<TariffPlan>
+        private readonly IEnumerable<TariffPlan> _tariffPlans = new List<TariffPlan>
         {
             new TariffPlan
             {
@@ -18,8 +18,8 @@ namespace TariffComparison.Infastructure
                     {
                         Id = 1,
                         Description = "base cost per month",
-                        LimitKWh = 0,
-                        PaymentType = PaymentType.Mothly,
+                        Limit = 0,
+                        BillingScheme = BillingScheme.Monthly,
                         Cost = new Money
                         {
                             Amount = 5,
@@ -30,8 +30,8 @@ namespace TariffComparison.Infastructure
                     {
                         Id = 2,
                         Description = "consumption cost",
-                        LimitKWh = 0,
-                        PaymentType = PaymentType.PerKWh,
+                        Limit = 0,
+                        BillingScheme = BillingScheme.PerUnit,
                         Cost = new Money
                         {
                             Amount = 0.22M,
@@ -50,8 +50,8 @@ namespace TariffComparison.Infastructure
                     {
                         Id = 3,
                         Description = "up to 4000 kWh/year",
-                        LimitKWh = 4000,
-                        PaymentType = PaymentType.UpToLimitPerKWh,
+                        Limit = 4000,
+                        BillingScheme = BillingScheme.UpToLimitPerUnit,
                         Cost = new Money
                         {
                             Amount = 800M,
@@ -62,8 +62,8 @@ namespace TariffComparison.Infastructure
                     {
                         Id = 4,
                         Description = "above 4000 kWh/year",
-                        LimitKWh = 4000,
-                        PaymentType = PaymentType.AboveLimitPerKWh,
+                        Limit = 4000,
+                        BillingScheme = BillingScheme.AboveLimitPerUnit,
                         Cost = new Money
                         {
                             Amount = 0.30M,
@@ -76,7 +76,7 @@ namespace TariffComparison.Infastructure
 
         public IEnumerable<TariffPlan> GetAll()
         {
-            return tariffPlans;
+            return _tariffPlans;
         }
     }
 }

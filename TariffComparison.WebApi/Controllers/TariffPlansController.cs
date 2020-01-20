@@ -2,11 +2,11 @@
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
-using TariffComparison.Domain.Services.Core;
+using TariffComparison.Domain.Core;
 using TariffComparison.WebApi.Mappers;
 using TariffComparison.WebApi.Models;
 
-namespace TariffComparison.Controllers
+namespace TariffComparison.WebApi.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
@@ -22,8 +22,8 @@ namespace TariffComparison.Controllers
             _tariffPlansService = tariffPlansService;
         }
 
-        [HttpGet("{consumptions}")]
-        public IEnumerable<TariffPlansViewModel> Get([FromQuery] int[] consumptions)
+        [HttpGet("compare")]
+        public IEnumerable<TariffPlansViewModel> Get([FromQuery(Name = "consumption")] int[] consumptions)
         {
             return _tariffPlansService.CompareAnnualCosts(consumptions).Select(_ => _.ToViewModel());
         }

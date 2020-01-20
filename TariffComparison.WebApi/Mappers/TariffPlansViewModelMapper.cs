@@ -9,8 +9,8 @@ namespace TariffComparison.WebApi.Mappers
         {
             return new TariffPlansViewModel
             {
-                Name = model.Name,
-                AnnualCosts = model.AnnualCosts
+                name = model.Name,
+                annual_costs = model.AnnualCosts
             };
         }
     }

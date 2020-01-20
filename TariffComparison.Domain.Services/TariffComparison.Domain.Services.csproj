@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TariffComparison.Domain.Core\TariffComparison.Domain.Core.csproj" />
-    <ProjectReference Include="..\TariffComparison.Infrastucture.Core\TariffComparison.Infrastucture.Core.csproj" />
+    <ProjectReference Include="..\TariffComparison.Infrastucture.Core\TariffComparison.Infrastructure.Core.csproj" />
   </ItemGroup>
 
 </Project>

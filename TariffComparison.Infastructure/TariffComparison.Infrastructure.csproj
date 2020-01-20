@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TariffComparison.Infrastucture.Core\TariffComparison.Infrastucture.Core.csproj" />
+    <ProjectReference Include="..\TariffComparison.Infrastucture.Core\TariffComparison.Infrastructure.Core.csproj" />
   </ItemGroup>
 
 </Project>
