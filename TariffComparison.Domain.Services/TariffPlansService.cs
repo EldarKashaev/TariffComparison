@@ -26,6 +26,8 @@ namespace TariffComparison.Domain.Services
                 throw new ArgumentException("Consumption cannot be negative value");
             }
 
+            Array.Sort(consumptions);
+
             var tariffPlans = _tariffPlans.GetAll();
             return tariffPlans.Select(_ => new TariffSummary
             {

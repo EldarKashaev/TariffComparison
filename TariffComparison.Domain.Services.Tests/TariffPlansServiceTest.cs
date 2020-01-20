@@ -66,6 +66,22 @@ namespace TariffComparison.Domain.Services.Tests
             Assert.AreEqual(result[1].AnnualCosts[0], Convert.ToDecimal(expectedCost));
         }
 
+        [TestMethod]
+        public void CompareAnnualCosts_CheckOrder_SuccessFlow()
+        {
+            _infrastructureService.Setup(_ => _.GetAll()).Returns(_plans);
+            var result = _target.CompareAnnualCosts(new[] { 6000, 3500, 4500 }).ToList();
+
+            _infrastructureService.Verify(_ => _.GetAll(), Times.Once);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(result.Count, 2);
+            Assert.AreEqual(result[1].Name, "Packaged tariff");
+            Assert.AreEqual(result[1].AnnualCosts[0], 800M);
+            Assert.AreEqual(result[1].AnnualCosts[1], 950M);
+            Assert.AreEqual(result[1].AnnualCosts[2], 1400M);
+        }
+
+
         #region Base Tariff Plans
 
         private readonly IEnumerable<TariffPlan> _plans = new List<TariffPlan>
