@@ -5,6 +5,7 @@ using System.Linq;
 using TariffComparison.Domain.Core;
 using TariffComparison.WebApi.Mappers;
 using TariffComparison.WebApi.Models;
+using TariffComparison.WebApi.Validators;
 
 namespace TariffComparison.WebApi.Controllers
 {
@@ -12,19 +13,17 @@ namespace TariffComparison.WebApi.Controllers
     [Route("api/v1/[controller]")]
     public class TariffPlansController : ControllerBase
     {
-        private readonly ILogger<TariffPlansController> _logger;
         private readonly ITariffPlansService _tariffPlansService;
 
-        public TariffPlansController(ILogger<TariffPlansController> logger,
-            ITariffPlansService tariffPlansService)
+        public TariffPlansController(ITariffPlansService tariffPlansService)
         {
-            _logger = logger;
             _tariffPlansService = tariffPlansService;
         }
 
         [HttpGet("compare")]
         public IEnumerable<TariffPlansViewModel> Get([FromQuery(Name = "consumption")] int[] consumptions)
         {
+            consumptions.Validate();
             return _tariffPlansService.CompareAnnualCosts(consumptions).Select(_ => _.ToViewModel());
         }
     }
